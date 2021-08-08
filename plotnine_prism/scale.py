@@ -24,3 +24,5 @@ class scale_shape_prism(scale_discrete):
     def __init__(self, palette="default", **kwargs):
         self.palette = prism_shape_pal(palette)
         scale_discrete.__init__(self, **kwargs)
+
+scale_colour_prism = scale_color_prism

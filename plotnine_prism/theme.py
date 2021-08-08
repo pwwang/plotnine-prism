@@ -17,7 +17,7 @@ class theme_prism(theme_abc):
         self,
         palette="black_and_white",
         base_size=10.0,
-        base_family="Arial",  # bold sans fonts are too wide
+        base_family="DejaVu Sans",
         base_fontface="bold",
         base_line_size=None,
         base_rect_size=None,
@@ -143,7 +143,8 @@ class theme_prism(theme_abc):
             legend_box_spacing=0.1,  # In inches
             legend_direction=None,
             panel_background=element_rect(
-                fill=colours.plottingAreaColor if palette == "office" else None,
+                fill=colours.plottingAreaColor,
+                # if palette == "office" else None,
                 colour=None,
             ),
             panel_border=panel_border,

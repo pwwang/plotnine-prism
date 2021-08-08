@@ -1,7 +1,7 @@
 """Prism themes for plotnine, inspired by ggprism"""
 
 from .theme import theme_prism
-from .scale import scale_color_prism, scale_fill_prism, scale_shape_prism
+from .scale import scale_color_prism, scale_fill_prism, scale_shape_prism, scale_colour_prism
 from .pal import (
     list_themes,
     list_color_pals,

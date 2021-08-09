@@ -6,7 +6,7 @@ from IPython.display import display
 from ipywidgets import widgets
 from datar.all import _no_warn
 from datar.all import f, as_categorical, mutate, complete_cases, filter, tibble
-from datar.datasets import ToothGrowth, msleep
+from datar.datasets import ToothGrowth, msleep, mtcars
 
 from scipy.optimize import curve_fit#, differential_evolution
 
@@ -18,6 +18,8 @@ ToothGrowth >>= mutate(
 msleep = (
     msleep >> filter(complete_cases(f)) >> mutate(vore=as_categorical(f.vore))
 )
+
+mtcars >>= mutate(cyl=as_categorical(f.cyl))
 
 set_option("figure_size", (4, 4))
 

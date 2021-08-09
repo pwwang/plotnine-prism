@@ -12,6 +12,8 @@ from .themeable import (
     prism_ticks_length,
     prism_ticks_length_x,
     prism_ticks_length_y,
+    axis_ticks_x,
+    axis_ticks_y
 )
 from .pal import list_themes, theme_colors
 
@@ -96,8 +98,8 @@ class theme_prism(theme_abc):
             axis_text_x=element_text(
                 margin=dict(t=0.8 * base_size),
                 angle=axis_text_angle,
-                hjust=1 if axis_text_angle in (45, 90, 270) else 0.5,
-                vjust=0.5 if axis_text_angle in (0, 90, 270) else 1,
+                hjust=2 if axis_text_angle in (45, 90, 270) else 0.5,
+                vjust=.5 if axis_text_angle in (0, 90, 270) else 1,
             ),
             # axis_text_x_top=element_text(margin=dict(b=0.8 * base_size / 4), vjust=0),
             axis_text_y=element_text(

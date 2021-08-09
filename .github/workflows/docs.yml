@@ -32,6 +32,7 @@ jobs:
           cp ../toothgrowth1.png toothgrowth1.png
           cp ../toothgrowth2.png toothgrowth2.png
           cp ../examples/*.ipynb raw/
+          cd ..
           mkdocs build
         if : success()
       - name: Deploy docs

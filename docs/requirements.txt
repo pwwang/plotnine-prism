@@ -6,6 +6,7 @@ mkapi-fix
 mknotebooks
 Pygments
 ipykernel
+ipywidgets
 datar
 scipy
 # # to compile readme.ipynb

@@ -8,7 +8,11 @@ from plotnine.themes.elements import (
     element_text,
 )
 
-from .themeable import prism_ticks_length, prism_ticks_length_x, prism_ticks_length_y
+from .themeable import (
+    prism_ticks_length,
+    prism_ticks_length_x,
+    prism_ticks_length_y,
+)
 from .pal import list_themes, theme_colors
 
 
@@ -96,7 +100,9 @@ class theme_prism(theme_abc):
                 vjust=0.5 if axis_text_angle in (0, 90, 270) else 1,
             ),
             # axis_text_x_top=element_text(margin=dict(b=0.8 * base_size / 4), vjust=0),
-            axis_text_y=element_text(margin=dict(r=0.8 * base_size / 4), hjust=1),
+            axis_text_y=element_text(
+                margin=dict(r=0.8 * base_size / 4), hjust=1
+            ),
             # axis_text_y_right=element_text(margin=dict(l=0.5 * base_size / 4), hjust=0),
             axis_ticks=element_line(),
             # axis_ticks_length =  unit(base_size / 2.5, "pt"),
@@ -117,10 +123,10 @@ class theme_prism(theme_abc):
             #     angle=-90, margin=dict(l=base_size * 0.6), vjust=0
             # ),
             # legend
-            legend_background=element_rect(color="None"),
+            legend_background=element_rect(color="None", fill="None"),
             legend_entry_spacing_x=None,
             legend_entry_spacing_y=None,
-            legend_key=element_rect(colour="None"),
+            legend_key=element_rect(colour="None", fill="None"),
             legend_key_size=base_size * 0.8 * 1.8,
             legend_key_height=None,
             legend_key_width=base_size * 1.5,
@@ -143,8 +149,9 @@ class theme_prism(theme_abc):
             legend_box_spacing=0.1,  # In inches
             legend_direction=None,
             panel_background=element_rect(
-                fill=colours.plottingAreaColor,
-                # if palette == "office" else None,
+                fill=colours.plottingAreaColor
+                if palette == "office"
+                else "None",
                 colour=None,
             ),
             panel_border=panel_border,
@@ -183,7 +190,10 @@ class theme_prism(theme_abc):
             ),
             # plot_title =         element_text(size = rel(1.2),
             plot_title=element_text(
-                size=1.2 * base_size, hjust=0.5, vjust=1, margin=dict(b=base_size)
+                size=1.2 * base_size,
+                hjust=0.5,
+                vjust=1,
+                margin=dict(b=base_size),
             ),
             # plot_title_position="panel",
             # plot_subtitle=element_text(

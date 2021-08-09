@@ -5,7 +5,7 @@ pymdown-extensions
 mkapi-fix
 mknotebooks
 Pygments
-# ipykernel
+ipykernel
 # # to compile readme.ipynb
 # plotnine
 # klib

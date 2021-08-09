@@ -1,25 +1,41 @@
-from plotnine_prism.pal import list_themes
+"""Provides theme_prism"""
 from plotnine.options import get_option
-from plotnine.themes.theme import theme as theme_abc
 from plotnine.themes.elements import (
     element_blank,
     element_line,
     element_rect,
-    element_text,
+    element_text
 )
+from plotnine.themes.theme import theme as theme_abc
 
-from .themeable import (
+from .pal import list_themes, theme_colors
+# Make sure the themeables work
+from .themeable import ( # pylint: disable=unused-import
+    axis_ticks_x,
+    axis_ticks_y,
     prism_ticks_length,
     prism_ticks_length_x,
-    prism_ticks_length_y,
-    axis_ticks_x,
-    axis_ticks_y
+    prism_ticks_length_y
 )
-from .pal import list_themes, theme_colors
 
 
+# pylint: disable=invalid-name
 class theme_prism(theme_abc):
-    def __init__(
+    """The theme_prism() class
+
+    Args:
+        palette: The theme palette
+        base_size: The base size of the plot
+        base_family: The base font family
+        base_fontface: The base font face
+        base_line_size: The base line size
+        base_rect_size: The base rect size
+        axis_text_angle: The default axis text angle
+        border: Whether to show border of the plot
+        **kwargs: Other theming options
+    """
+
+    def __init__( # pylint: disable=too-many-arguments
         self,
         palette="black_and_white",
         base_size=10.0,
@@ -31,6 +47,7 @@ class theme_prism(theme_abc):
         border=False,
         **kwargs,
     ):
+        """Construct"""
         if axis_text_angle not in (0, 45, 90, 270):
             raise ValueError(
                 "'axis_text_angle' must be one of [0, 45, 90, 270].\n"
@@ -41,7 +58,7 @@ class theme_prism(theme_abc):
         if palette not in list_themes():
             raise ValueError(
                 f"The palette '{palette}' does not exist. "
-                f"Supported palettes are: {get_scheme_names()}"
+                f"Supported palettes are: {list_themes()}"
             )
 
         if base_line_size is None:
@@ -99,13 +116,15 @@ class theme_prism(theme_abc):
                 margin=dict(t=0.8 * base_size),
                 angle=axis_text_angle,
                 hjust=2 if axis_text_angle in (45, 90, 270) else 0.5,
-                vjust=.5 if axis_text_angle in (0, 90, 270) else 1,
+                vjust=0.5 if axis_text_angle in (0, 90, 270) else 1,
             ),
-            # axis_text_x_top=element_text(margin=dict(b=0.8 * base_size / 4), vjust=0),
+            # axis_text_x_top=element_text(margin=dict(b=0.8 * base_size / 4),
+            # vjust=0),
             axis_text_y=element_text(
                 margin=dict(r=0.8 * base_size / 4), hjust=1
             ),
-            # axis_text_y_right=element_text(margin=dict(l=0.5 * base_size / 4), hjust=0),
+            # axis_text_y_right=element_text(margin=dict(l=0.5 * base_size / 4),
+            # hjust=0),
             axis_ticks=element_line(),
             # axis_ticks_length =  unit(base_size / 2.5, "pt"),
             axis_ticks_length=base_size / 2.5,
@@ -117,7 +136,8 @@ class theme_prism(theme_abc):
             # axis_ticks_length_y_bottom=None,
             axis_title=element_text(colour=colours.axisTitleColor),
             axis_title_x=element_text(margin=dict(t=base_size * 0.6), vjust=1),
-            # axis_title_x_top=element_text(margin=dict(b=base_size * 0.6), vjust=0),
+            # axis_title_x_top=element_text(margin=dict(b=base_size * 0.6),
+            # vjust=0),
             axis_title_y=element_text(
                 angle=90, margin=dict(r=base_size * 1.5), vjust=1
             ),

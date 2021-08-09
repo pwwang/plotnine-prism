@@ -1,3 +1,4 @@
+"""Provides guides"""
 import hashlib
 from warnings import warn
 
@@ -6,15 +7,18 @@ from matplotlib.ticker import NullLocator
 
 from plotnine.guides.guide import guide
 from plotnine.exceptions import PlotnineWarning
-from plotnine.themes.elements import element_blank
+# from plotnine.themes.elements import element_blank
 
+# pylint: disable=invalid-name
 class guide_prism_offset(guide):
-
+    """The prism offset guide that offset the axes"""
     offset = 20
     aesthetic = None
+    hash = None
     available_aes = {"x", "y"}
 
     def train(self, scale, aesthetic=None):
+        """Get arguments from the scale"""
         if aesthetic is None:
             aesthetic = scale.aesthetics[0]
 
@@ -33,6 +37,7 @@ class guide_prism_offset(guide):
         return self
 
     def create_geoms(self, plot):
+        """Apply the arguments"""
         xaxis_position = plot.axs[0].xaxis.get_label_position()
         yaxis_position = plot.axs[0].yaxis.get_label_position()
         gca = plot.axs[0].axes
@@ -74,20 +79,20 @@ class guide_prism_offset(guide):
             gca.set_ylim(min(major_locs), max(major_locs))
             gca.yaxis.set_minor_locator(NullLocator())
 
-    def merge(self, other):
-        """
-        Simply discards the other guide
-        """
+    def merge(self, other): # pylint: disable=unused-argument
+        """Simply discards the other guide"""
         return self
 
     def draw(self):
-        ...
+        """Nothing to do"""
 
 
 class guide_prism(guide_prism_offset):
+    """The prism offset guide that hides the minor ticks"""
     available_aes = {"x", "y"}
 
     def create_geoms(self, plot):
+        """Apply the arguments"""
         gca = plot.axs[0].axes
         if self.aesthetic == 'x':
             gca.xaxis.set_minor_locator(NullLocator())
@@ -95,14 +100,17 @@ class guide_prism(guide_prism_offset):
             gca.yaxis.set_minor_locator(NullLocator())
 
 class guide_prism_minor(guide_prism_offset):
+    """The prism offset guide that shows the minor ticks"""
     available_aes = {"x", "y"}
 
     def create_geoms(self, plot):
-        ...
+        """Apply the arguments"""
 
 class guide_prism_offset_minor(guide_prism_offset):
+    """The prism offset guide that shows the minor ticks with offset"""
 
     def create_geoms(self, plot):
+        """Apply the arguments"""
         xaxis_position = plot.axs[0].xaxis.get_label_position()
         yaxis_position = plot.axs[0].yaxis.get_label_position()
         gca = plot.axs[0].axes

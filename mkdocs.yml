@@ -40,5 +40,5 @@ nav:
         'Changing Axes': 'raw/axes.ipynb'
     - 'Examples':
         'Dose Reponse Curve': 'raw/ex1-dose.ipynb'
-    - 'API': 'mkapi/api/plotnine-prism'
+    - 'API': 'mkapi/api/plotnine_prism'
     - 'Change Log': CHANGELOG.md

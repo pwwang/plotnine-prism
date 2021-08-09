@@ -6,6 +6,8 @@ mkapi-fix
 mknotebooks
 Pygments
 ipykernel
+datar
+scipy
 # # to compile readme.ipynb
 # plotnine
 # klib

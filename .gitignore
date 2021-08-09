@@ -118,6 +118,7 @@ docs/toothgrowth1.png
 docs/toothgrowth2.png
 docs/*.nbconvert.ipynb
 docs/*/*.nbconvert.ipynb
+nb_helpers.py
 
 # vscode's local history extension
 .history/

@@ -39,6 +39,7 @@ nav:
         'Color, Fill and Shape Palettes': 'raw/colours.ipynb'
         'Changing Axes': 'raw/axes.ipynb'
     - 'Examples':
+        'README': 'raw/README.ipynb'
         'Dose Reponse Curve': 'raw/ex1-dose.ipynb'
     - 'API': 'mkapi/api/plotnine_prism'
     - 'Change Log': CHANGELOG.md

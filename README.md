@@ -15,7 +15,7 @@ pip install -U plotnine-prism
 
 ## Usage
 
-See [Getting started][4] for a quick overview of `plotnine_prism` features.
+See [this notebook][6] for the following example, and also [Getting started][4] for a quick overview of `plotnine_prism` features.
 
 ```python
 from plotnine import *
@@ -66,6 +66,7 @@ The Dose Response Curve was recreated. See [this vignette][5] for the source cod
 [1]: https://github.com/has2k1/plotnine
 [2]: https://github.com/csdaw/ggprism/
 [3]: https://pwwang.github.io/plotnine-prism
-[4]: https://pwwang.github.io/plotnine-prism/getting_started
-[5]: https://pwwang.github.io/plotnine-prism/examples/dose
+[4]: https://pwwang.github.io/plotnine-prism/get_started
+[5]: https://pwwang.github.io/plotnine-prism/raw/ex1-dose
+[6]: https://pwwang.github.io/plotnine-prism/raw/README
 

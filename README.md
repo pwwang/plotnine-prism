@@ -24,10 +24,7 @@ from plotnine_prism import *
 from datar.all import f, as_categorical, mutate
 from datar.datasets import ToothGrowth
 
-ToothGrowth >>= mutate(
-    dose=as_categorical(f.dose),
-    supp=as_categorical(f.supp),
-)
+ToothGrowth >>= mutate(dose=as_categorical(f.dose))
 
 base = (
     ggplot(ToothGrowth, aes(x = "dose", y = "len")) +

@@ -48,4 +48,4 @@ __all__ = (
     "guide_prism_offset_minor",
 )
 
-__version__ = "0.0.0"
+__version__ = "0.1.0"

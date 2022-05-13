@@ -4,22 +4,22 @@ from plotnine.themes.elements import (
     element_blank,
     element_line,
     element_rect,
-    element_text
+    element_text,
 )
 from plotnine.themes.theme import theme as theme_abc
 
 from .pal import list_themes, theme_colors
+
 # Make sure the themeables work
-from .themeable import ( # pylint: disable=unused-import
+from .themeable import (
     axis_ticks_x,
     axis_ticks_y,
     prism_ticks_length,
     prism_ticks_length_x,
-    prism_ticks_length_y
+    prism_ticks_length_y,
 )
 
 
-# pylint: disable=invalid-name
 class theme_prism(theme_abc):
     """The theme_prism() class
 
@@ -35,7 +35,7 @@ class theme_prism(theme_abc):
         **kwargs: Other theming options
     """
 
-    def __init__( # pylint: disable=too-many-arguments
+    def __init__(
         self,
         palette="black_and_white",
         base_size=10.0,

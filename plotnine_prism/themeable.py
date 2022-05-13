@@ -10,9 +10,10 @@ from plotnine.themes.themeable import (
     axis_ticks_minor_y,
 )
 
-# pylint: disable=invalid-name
+
 class axis_ticks_x(axis_ticks_major_x, axis_ticks_minor_x):
     """Themeable for ticks on x axis that is missing in plotnine"""
+
     def apply(self, ax):
         """Apply themeable to the axis"""
         axis_ticks_major_x.apply(self, ax)
@@ -26,6 +27,7 @@ class axis_ticks_x(axis_ticks_major_x, axis_ticks_minor_x):
 
 class axis_ticks_y(axis_ticks_major_y, axis_ticks_minor_y):
     """Themeable for ticks on y axis that is missing in plotnine"""
+
     def apply(self, ax):
         """Apply themeable to the axis"""
         axis_ticks_major_y.apply(self, ax)
@@ -37,9 +39,9 @@ class axis_ticks_y(axis_ticks_major_y, axis_ticks_minor_y):
         axis_ticks_minor_y.blank(self, ax)
 
 
-
 class prism_ticks_length_x(themeable_abc):
     """Themeable for ticks length on x axis"""
+
     def apply(self, ax):
         """Apply themeable to the axis"""
         themeable_abc.apply(self, ax)
@@ -64,6 +66,7 @@ class prism_ticks_length_x(themeable_abc):
 
 class prism_ticks_length_y(themeable_abc):
     """Themeable for ticks length on y axis"""
+
     def apply(self, ax):
         """Apply themeable to the axis"""
         themeable_abc.apply(self, ax)
@@ -88,6 +91,7 @@ class prism_ticks_length_y(themeable_abc):
 
 class prism_ticks_length(prism_ticks_length_x, prism_ticks_length_y):
     """Themeable for ticks length"""
+
     def apply(self, ax):
         """Apply themeable to the axis"""
         prism_ticks_length_x.apply(self, ax)

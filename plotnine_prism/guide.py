@@ -2,16 +2,15 @@
 import hashlib
 from warnings import warn
 
-# from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.ticker import NullLocator
 
 from plotnine.guides.guide import guide
 from plotnine.exceptions import PlotnineWarning
-# from plotnine.themes.elements import element_blank
 
-# pylint: disable=invalid-name
+
 class guide_prism_offset(guide):
     """The prism offset guide that offset the axes"""
+
     offset = 20
     aesthetic = None
     hash = None
@@ -79,7 +78,7 @@ class guide_prism_offset(guide):
             gca.set_ylim(min(major_locs), max(major_locs))
             gca.yaxis.set_minor_locator(NullLocator())
 
-    def merge(self, other): # pylint: disable=unused-argument
+    def merge(self, other):
         """Simply discards the other guide"""
         return self
 
@@ -89,22 +88,26 @@ class guide_prism_offset(guide):
 
 class guide_prism(guide_prism_offset):
     """The prism offset guide that hides the minor ticks"""
+
     available_aes = {"x", "y"}
 
     def create_geoms(self, plot):
         """Apply the arguments"""
         gca = plot.axs[0].axes
-        if self.aesthetic == 'x':
+        if self.aesthetic == "x":
             gca.xaxis.set_minor_locator(NullLocator())
         else:
             gca.yaxis.set_minor_locator(NullLocator())
 
+
 class guide_prism_minor(guide_prism_offset):
     """The prism offset guide that shows the minor ticks"""
+
     available_aes = {"x", "y"}
 
     def create_geoms(self, plot):
         """Apply the arguments"""
+
 
 class guide_prism_offset_minor(guide_prism_offset):
     """The prism offset guide that shows the minor ticks with offset"""

@@ -3,7 +3,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-import toml
+import rtoml
 from diot import Diot
 
 SCHEMES_DIR = Path(__file__).parent.joinpath('schemes')
@@ -20,23 +20,23 @@ def list_themes():
 @lru_cache()
 def _all_color_pals():
     with SCHEMES_DIR.joinpath('_color_palettes.toml').open() as fcolor:
-        return toml.load(fcolor)
+        return rtoml.load(fcolor)
 
 @lru_cache()
 def _all_fill_pals():
     with SCHEMES_DIR.joinpath('_fill_palettes.toml').open() as ffill:
-        return toml.load(ffill)
+        return rtoml.load(ffill)
 
 @lru_cache()
 def _all_shape_pals():
     with SCHEMES_DIR.joinpath('_shape_palettes.toml').open() as fshape:
-        return toml.load(fshape)
+        return rtoml.load(fshape)
 
 @lru_cache()
 def theme_colors(palette):
     """Get the colors for a specific theme"""
     with SCHEMES_DIR.joinpath(f"{palette}.toml") as fsch:
-        return Diot(toml.load(fsch))
+        return Diot(rtoml.load(fsch))
 
 def list_color_pals():
     """List all available color palettes"""

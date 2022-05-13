@@ -4,7 +4,8 @@ import numpy
 from plotnine.options import set_option
 from IPython.display import display
 from ipywidgets import widgets
-from datar.all import _no_warn
+from datar import options
+options(import_names_conflict="silent")
 from datar.all import f, as_categorical, mutate, complete_cases, filter, tibble
 from datar.datasets import ToothGrowth, msleep, mtcars
 

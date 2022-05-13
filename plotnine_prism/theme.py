@@ -11,7 +11,7 @@ from plotnine.themes.theme import theme as theme_abc
 from .pal import list_themes, theme_colors
 
 # Make sure the themeables work
-from .themeable import (
+from .themeable import (  # noqa: F401
     axis_ticks_x,
     axis_ticks_y,
     prism_ticks_length,
@@ -123,7 +123,8 @@ class theme_prism(theme_abc):
             axis_text_y=element_text(
                 margin=dict(r=0.8 * base_size / 4), hjust=1
             ),
-            # axis_text_y_right=element_text(margin=dict(l=0.5 * base_size / 4),
+            # axis_text_y_right=element_text(
+            # margin=dict(l=0.5 * base_size / 4),
             # hjust=0),
             axis_ticks=element_line(),
             # axis_ticks_length =  unit(base_size / 2.5, "pt"),

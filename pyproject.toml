@@ -28,6 +28,6 @@ console_output_style = "progress"
 junit_family = "xunit1"
 
 [tool.black]
-line-length = 80
+line-length = 79
 target-version = ['py37', 'py38', 'py39']
 include = '\.pyi?$'

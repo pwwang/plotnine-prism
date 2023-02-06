@@ -38,7 +38,7 @@ class theme_prism(theme_abc):
     def __init__(
         self,
         palette="black_and_white",
-        base_size=10.0,
+        base_size=8.0,
         base_family="DejaVu Sans",
         base_fontface="bold",
         base_line_size=None,
@@ -147,11 +147,11 @@ class theme_prism(theme_abc):
             # ),
             # legend
             legend_background=element_rect(color="None", fill="None"),
-            legend_entry_spacing_x=None,
-            legend_entry_spacing_y=None,
+            legend_entry_spacing_x=5,
+            legend_entry_spacing_y=2,
             legend_key=element_rect(colour="None", fill="None"),
             legend_key_size=base_size * 0.8 * 1.8,
-            legend_key_height=None,
+            legend_key_height=8.5,
             legend_key_width=base_size * 1.5,
             legend_margin=0,  # points
             legend_spacing=base_size,  # points
@@ -164,13 +164,16 @@ class theme_prism(theme_abc):
             legend_text_legend=element_text(va="baseline", weight="normal"),
             legend_text_colorbar=element_text(va="center", weight="normal"),
             legend_title=element_blank(),
-            legend_title_align=None,
+            legend_title_align="auto",
             legend_position="right",
-            legend_box=None,
+            legend_box="auto",
             legend_box_margin=0,  # points
-            legend_box_just=None,
+            legend_box_just="auto",
             legend_box_spacing=0.1,  # In inches
-            legend_direction=None,
+            legend_direction="vertical",
+            aspect_ratio="auto",
+            strip_margin=0,
+            strip_margin_x=0,
             panel_background=element_rect(
                 fill=colours.plottingAreaColor
                 if palette == "office"
@@ -223,9 +226,9 @@ class theme_prism(theme_abc):
             #     hjust=0.5, vjust=1, margin=dict(b=base_size / 2)
             # ),
             # plot_caption =       element_text(size = rel(0.8),
-            # plot_caption=element_text(
-            #     size=0.8, hjust=1, vjust=1, margin=dict(t=base_size / 2)
-            # ),
+            plot_caption=element_text(
+                size=0.8, hjust=1, vjust=1, margin=dict(t=base_size / 2)
+            ),
             # plot_caption_position="panel",
             # plot_tag =           element_text(size = rel(1.2),
             # plot_tag=element_text(size=1.2, hjust=0.5, vjust=0.5),

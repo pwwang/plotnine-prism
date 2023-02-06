@@ -7,13 +7,15 @@ license = "GNU General Public License v2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-plotnine = "^0.8"
+python = "^3.8"
+plotnine = "^0.10"
 rtoml = "^0.8"
 diot = "^0.1"
 
 [tool.poetry.dev-dependencies]
-ipykernel = "^6.13.0"
+ipykernel = "^6"
+datar = {version = "^0.11", extras = ["pandas"]}
+patchworklib = "^0.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

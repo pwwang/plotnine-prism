@@ -1,51 +1,55 @@
 """Helpers for notebooks"""
 
 import numpy
-from plotnine.options import set_option
-from IPython.display import display
-from ipywidgets import widgets
-from datar import options
-options(import_names_conflict="silent")
-from datar.all import f, as_categorical, mutate, complete_cases, filter, tibble
-from datar.datasets import ToothGrowth, msleep, mtcars
+from plotnine.options import set_option, get_option
 
-from scipy.optimize import curve_fit#, differential_evolution
+import patchworklib as pw
+
+from datar.all import f, as_factor, mutate, complete_cases, filter_, tibble
+from datar.data import ToothGrowth, msleep, mtcars
+
+from scipy.optimize import curve_fit  # differential_evolution
 
 ToothGrowth >>= mutate(
-    dose=as_categorical(f.dose),
-    supp=as_categorical(f.supp),
+    dose=as_factor(f.dose),
+    supp=as_factor(f.supp),
 )
 
 msleep = (
-    msleep >> filter(complete_cases(f)) >> mutate(vore=as_categorical(f.vore))
+    msleep >> filter_(complete_cases(f)) >> mutate(vore=as_factor(f.vore))
 )
 
-mtcars >>= mutate(cyl=as_categorical(f.cyl))
+mtcars >>= mutate(cyl=as_factor(f.cyl))
 
-set_option("figure_size", (4, 4))
+set_option("figure_size", (3, 3))
 
 
-def plot_grid(*plots, ncol=2):
-    hboxes = []
-    hbplots = []
-    for plot in plots:
-        out = widgets.Output()
-        with out:
-            display(plot)
-        if len(hbplots) < ncol:
-            hbplots.append(out)
-        else:
-            hboxes.append(widgets.HBox(hbplots))
-            hbplots = [out]
-    if hbplots:
-        hboxes.append(widgets.HBox(hbplots))
+def plot_grid(*plots, ncol=2, figsize=None):
+    figsize = figsize or get_option("figure_size")
+    plots = [
+        pw.load_ggplot(plot, figsize=figsize)
+        for plot in plots
+    ]
+    ncol = min(ncol, len(plots))
+    nrow = int(numpy.ceil(len(plots) / ncol))
+    plot_rows = []
+    for i in range(nrow):
+        plot = plots[i * ncol]
+        for j in range(1, ncol):
+            plot = plot | plots[i * ncol + j]
+        plot_rows.append(plot)
 
-    display(widgets.VBox(hboxes))
+    pr0 = plot_rows[0]
+    for pr in plot_rows[1:]:
+        pr0 = pr0 / pr
+
+    return pr0.savefig()
 
 
 # function for genetic algorithm to minimize (sum of squared error)
 # def sumsq_error(params, x, y):
-#     warnings.filterwarnings("ignore") # do not print warnings by genetic algorithm
+#     warnings.filterwarnings("ignore")
+#     # do not print warnings by genetic algorithm
 #     val = formula(x, *params)
 #     return numpy.sum((y - val) ** 2.0)
 

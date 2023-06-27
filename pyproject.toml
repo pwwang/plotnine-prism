@@ -8,14 +8,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-plotnine = "^0.10"
+plotnine = "^0.12"
 rtoml = "^0.8"
-diot = "^0.1"
+diot = "^0.2"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6"
-datar = {version = "^0.11", extras = ["pandas"]}
-patchworklib = "^0.5"
+datar = {version = "^0.12", extras = ["pandas"]}
+patchworklib = "^0.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

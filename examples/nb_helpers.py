@@ -21,29 +21,26 @@ msleep = (
 
 mtcars >>= mutate(cyl=as_factor(f.cyl))
 
-set_option("figure_size", (3, 3))
+set_option("figure_size", (4, 4))
 
 
-def plot_grid(*plots, ncol=2, figsize=None):
-    figsize = figsize or get_option("figure_size")
-    plots = [
-        pw.load_ggplot(plot, figsize=figsize)
-        for plot in plots
-    ]
-    ncol = min(ncol, len(plots))
-    nrow = int(numpy.ceil(len(plots) / ncol))
-    plot_rows = []
-    for i in range(nrow):
-        plot = plots[i * ncol]
-        for j in range(1, ncol):
-            plot = plot | plots[i * ncol + j]
-        plot_rows.append(plot)
+# def plot_grid(*plots, figsize=None):
+#     figsize = figsize or get_option("figure_size")
+#     plots = [
+#         pw.load_ggplot(plot, figsize=figsize)
+#         for plot in plots
+#     ]
+#     pr0 = plots[0]
+#     for pr in plots[1:]:
+#         pr0 = pr0 | pr
 
-    pr0 = plot_rows[0]
-    for pr in plot_rows[1:]:
-        pr0 = pr0 / pr
+#     return pr0.savefig()
 
-    return pr0.savefig()
+
+# def plot_grid2(plot1, plot2):
+#     p1 = pw.load_ggplot(plot1)
+#     p2 = pw.load_ggplot(plot2)
+#     return p1 | p2
 
 
 # function for genetic algorithm to minimize (sum of squared error)

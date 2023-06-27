@@ -43,7 +43,7 @@ class guide_prism_offset(guide):
 
         if self.aesthetic == "x":
             major_locs = gca.get_xticks()
-            minor_locs = gca.xaxis.get_minorticklocs()
+            minor_locs = gca.get_xticks(minor=True)
             if yaxis_position == "left":
                 offset = (
                     self.offset
@@ -61,19 +61,20 @@ class guide_prism_offset(guide):
             gca.xaxis.set_minor_locator(NullLocator())
         else:
             major_locs = gca.get_yticks()
-            minor_locs = gca.yaxis.get_minorticklocs()
+            minor_locs = gca.get_yticks(minor=True)
             if xaxis_position == "bottom":
                 offset = (
                     self.offset
-                    if major_locs[0] > minor_locs[0]
+                    if len(minor_locs) > 0 and major_locs[0] > minor_locs[0]
                     else self.offset / 2
                 )
             else:
                 offset = (
                     self.offset
-                    if major_locs[-1] < minor_locs[-1]
+                    if len(minor_locs) > 0 and major_locs[-1] < minor_locs[-1]
                     else self.offset / 2
                 )
+
             gca.spines[xaxis_position].set_position(("outward", offset))
             gca.set_ylim(min(major_locs), max(major_locs))
             gca.yaxis.set_minor_locator(NullLocator())

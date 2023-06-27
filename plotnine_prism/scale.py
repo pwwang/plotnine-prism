@@ -86,8 +86,8 @@ def get_labels(
         ):
             _wanted_breaks = set(breaks)
             labels = [
-                l
-                for l, b in zip(labels, self.breaks)
+                lab
+                for lab, b in zip(labels, self.breaks)
                 if b in _wanted_breaks
             ]
 

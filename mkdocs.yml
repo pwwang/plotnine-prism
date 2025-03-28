@@ -17,8 +17,8 @@ theme:
 markdown_extensions:
     - markdown.extensions.admonition
     - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
     - pymdownx.superfences:
         preserve_tabs: true
     - toc:
@@ -36,11 +36,11 @@ nav:
     - 'Home': 'index.md'
     - 'Getting Started': 'raw/get_started.ipynb'
     - 'Guides':
-        'Themes': 'raw/themes.ipynb'
-        'Color, Fill and Shape Palettes': 'raw/colours.ipynb'
-        'Changing Axes': 'raw/axes.ipynb'
+        - 'Themes': 'raw/themes.ipynb'
+        - 'Color, Fill and Shape Palettes': 'raw/colours.ipynb'
+        - 'Changing Axes': 'raw/axes.ipynb'
     - 'Examples':
-        'README': 'raw/README.ipynb'
-        'Dose Reponse Curve': 'raw/ex1-dose.ipynb'
+        - 'README': 'raw/README.ipynb'
+        - 'Dose Reponse Curve': 'raw/ex1-dose.ipynb'
     - 'API': 'mkapi/api/plotnine_prism'
     - 'Change Log': CHANGELOG.md

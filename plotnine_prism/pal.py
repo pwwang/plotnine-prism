@@ -40,7 +40,7 @@ def _all_shape_pals():
 @lru_cache()
 def theme_colors(palette):
     """Get the colors for a specific theme"""
-    with SCHEMES_DIR.joinpath(f"{palette}.toml") as fsch:
+    with SCHEMES_DIR.joinpath(f"{palette}.toml").open() as fsch:
         return Diot(rtoml.load(fsch))
 
 

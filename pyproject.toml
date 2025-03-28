@@ -12,9 +12,9 @@ plotnine = "^0.12"
 rtoml = "^0.8"
 diot = "^0.2"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 ipykernel = "^6"
-datar = {version = "^0.12", extras = ["pandas"]}
+datar = {version = "^0.15", extras = ["pandas"]}
 patchworklib = "^0.6"
 
 [build-system]

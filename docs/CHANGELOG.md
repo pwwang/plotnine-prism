@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.2
+
+- chore: update Python version and dependencies in pyproject.toml
+
 ## 0.3.1
 
 - fix: fix file opening in theme_colors function (#2)

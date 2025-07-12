@@ -7,10 +7,9 @@ license = "GNU General Public License v2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 plotnine = "^0.12"
-rtoml = "^0.8"
-diot = "^0.2"
+diot = {version = "^0.3", extras = ["toml"]}
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.6.1"

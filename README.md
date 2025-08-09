@@ -67,6 +67,6 @@ The Dose Response Curve was recreated. See [this vignette][5] for the source cod
 [2]: https://github.com/csdaw/ggprism/
 [3]: https://pwwang.github.io/plotnine-prism
 [4]: https://pwwang.github.io/plotnine-prism/raw/get_started/
-[5]: https://pwwang.github.io/plotnine-prism/raw/ex1-dose
+[5]: https://pwwang.github.io/plotnine-prism/raw/ex1-dose/
 [6]: https://nbviewer.org/github/pwwang/plotnine-prism/blob/master/examples/README.ipynb
 

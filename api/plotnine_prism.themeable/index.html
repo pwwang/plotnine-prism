@@ -1,0 +1,3698 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../plotnine_prism.scale/">
+      
+      
+        <link rel="next" href="../../CHANGELOG/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>plotnine_prism.themeable - plotnine-prism</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
+      <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    
+      <link rel="stylesheet" href="../../css/mkapi-common.css">
+    
+      <link rel="stylesheet" href="../../style.css">
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plotnine_prismthemeable" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="plotnine-prism" class="md-header__button md-logo" aria-label="plotnine-prism" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            plotnine-prism
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              plotnine_prism.themeable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pwwang/plotnine-prism" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pwwang/plotnine-prism
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="plotnine-prism" class="md-nav__button md-logo" aria-label="plotnine-prism" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    plotnine-prism
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pwwang/plotnine-prism" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pwwang/plotnine-prism
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raw/get_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raw/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Themes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raw/colours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Color, Fill and Shape Palettes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raw/axes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changing Axes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raw/ex1-dose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dose Reponse Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            plotnine_prism
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotnine_prism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotnine_prism.guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism.guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotnine_prism.theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism.theme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotnine_prism.pal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism.pal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotnine_prism.scale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism.scale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism.themeable
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    plotnine_prism.themeable
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plotnine_prismthemeable" class="md-nav__link">
+    <span class="md-ellipsis">
+      themeable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="themeable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      axis_ticks_x
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="axis_ticks_x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_xapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_xblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      axis_ticks_y
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="axis_ticks_y">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_yapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_yblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      prism_ticks_length_x
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prism_ticks_length_x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_xapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_xblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      prism_ticks_length_y
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prism_ticks_length_y">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_yapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_yblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      prism_ticks_length
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prism_ticks_length">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_lengthapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_lengthblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Change Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plotnine_prismthemeable" class="md-nav__link">
+    <span class="md-ellipsis">
+      themeable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="themeable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      axis_ticks_x
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="axis_ticks_x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_xapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_xblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      axis_ticks_y
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="axis_ticks_y">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_yapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableaxis_ticks_yblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      prism_ticks_length_x
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prism_ticks_length_x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_xapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_xblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      prism_ticks_length_y
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prism_ticks_length_y">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_yapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length_yblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      prism_ticks_length
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prism_ticks_length">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablefrom_class_name_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      from_class_name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableis_blank_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablemerge_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableeq_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      eq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableapply_figure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeablesetup_figure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotninethemesthemeablethemeableblank_figure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_figure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_lengthapply_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_ax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotnine_prismthemeableprism_ticks_lengthblank_ax" class="md-nav__link">
+    <span class="md-ellipsis">
+      blank_ax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>plotnine_prism.themeable</h1>
+
+<div class="mkapi-node" id="plotnine_prism.themeable">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object module plain top">
+    <div class="mkapi-object-kind module top">module</div>
+    <h2 id="plotnine_prismthemeable" class="mkapi-object-body module top"><span class="mkapi-object-prefix"><a href="../plotnine_prism/#plotnine_prism">plotnine_prism</a>.</span><span class="mkapi-object-name">themeable</span></h2>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable" title="Source for plotnine_prism.themeable">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Add themeables for theme_prism</p></div>
+    </div>
+  <div class="mkapi-section classes">
+      <div class="mkapi-section-name classes">
+          <span class="mkapi-section-name-body classes">Classes</span> 
+        </div>
+      <div class="mkapi-section-body classes"><ul class="mkapi-items">
+<li class="class"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.axis_ticks_x">axis_ticks_x</a></code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Themeable for ticks on x axis that is missing in plotnine<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_x" title="Source for plotnine_prism.themeable.axis_ticks_x">&lt;/&gt;</a></span></li>
+
+<li class="class"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.axis_ticks_y">axis_ticks_y</a></code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Themeable for ticks on y axis that is missing in plotnine<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_y" title="Source for plotnine_prism.themeable.axis_ticks_y">&lt;/&gt;</a></span></li>
+
+<li class="class"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length_x">prism_ticks_length_x</a></code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Themeable for ticks length on x axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_x" title="Source for plotnine_prism.themeable.prism_ticks_length_x">&lt;/&gt;</a></span></li>
+
+<li class="class"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length_y">prism_ticks_length_y</a></code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Themeable for ticks length on y axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_y" title="Source for plotnine_prism.themeable.prism_ticks_length_y">&lt;/&gt;</a></span></li>
+
+<li class="class"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length">prism_ticks_length</a></code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Themeable for ticks length<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length" title="Source for plotnine_prism.themeable.prism_ticks_length">&lt;/&gt;</a></span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="plotnine_prism.themeable.axis_ticks_x">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object class code top">
+    <div class="mkapi-object-kind class top">class</div>
+    <h3 id="plotnine_prismthemeableaxis_ticks_x" class="mkapi-object-body class top"><code class="mkapi-object-prefix"><a href="#plotnine_prism.themeable">plotnine_prism.themeable</a>.</code><code class="mkapi-object-name">axis_ticks_x</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme_element=None</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_x" title="Source for plotnine_prism.themeable.axis_ticks_x">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section bases">
+      <div class="mkapi-section-name bases">
+          <span class="mkapi-section-name-body bases">Bases</span> 
+        </div>
+      <div class="mkapi-section-body bases">
+<span class="mkapi-base">plotnine.themes.themeable.axis_ticks_major_x</span>
+
+<span class="mkapi-base">plotnine.themes.themeable.axis_ticks_minor_x</span>
+
+<span class="mkapi-base">plotnine.themes.themeable.themeable</span>
+</div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Themeable for ticks on x axis that is missing in plotnine</p></div>
+    </div>
+  <div class="mkapi-section attributes">
+      <div class="mkapi-section-name attributes">
+          <span class="mkapi-section-name-body attributes">Attributes</span> 
+        </div>
+      <div class="mkapi-section-body attributes"><ul class="mkapi-items">
+
+
+
+<li class="readonly-property"><code class="mkapi-item-name">rcParams</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return themeables rcparams to an rcparam dict before plotting.<span id="plotnine.themes.themeable.themeable.rcParams"></span><a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.rcParams" title="Source for plotnine.themes.themeable.themeable.rcParams">&lt;/&gt;</a></span></li>
+
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section methods">
+      <div class="mkapi-section-name methods">
+          <span class="mkapi-section-name-body methods">Methods</span> 
+        </div>
+      <div class="mkapi-section-body methods"><ul class="mkapi-items">
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.__eq__">__eq__</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Mostly for unittesting.<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply">apply</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Called by the theme to apply the themeable<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.axis_ticks_x.apply_ax">apply_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply themeable to the axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_x.apply_ax" title="Source for plotnine_prism.themeable.axis_ticks_x.apply_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply_figure">apply_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.axis_ticks_x.blank_ax">blank_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">When it's set blank<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_x.blank_ax" title="Source for plotnine_prism.themeable.axis_ticks_x.blank_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.blank_figure">blank_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Blank out elements on the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a></span></li>
+
+<li class="staticmethod"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.from_class_name">from_class_name</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(out : Themeable)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Create an themeable by name<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.is_blank">is_blank</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return True if theme_element is made of element_blank<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.merge">merge</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Merge properties of other into self<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.setup_figure">setup_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a></span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+  <div class="mkapi-members">
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.from_class_name">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object staticmethod code">
+    <div class="mkapi-object-kind staticmethod">staticmethod</div>
+    <h4 id="plotninethemesthemeablethemeablefrom_class_name" class="mkapi-object-body staticmethod"><code class="mkapi-object-name">from_class_name</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Create an themeable by name</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Class name</span></li>
+
+<li><code class="mkapi-item-name">theme_element</code>
+<span class="mkapi-item-type">(element object)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A of the type required by the themeFor lines, text and rects it should be one of:
+:class:<code>element_line</code>,
+:class:<code>element_rect</code>,
+:class:<code>element_text</code> or
+:class:<code>element_blank</code>
+</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.is_blank">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableis_blank" class="mkapi-object-body method"><code class="mkapi-object-name">is_blank</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Return True if theme_element is made of element_blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.merge">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablemerge" class="mkapi-object-body method"><code class="mkapi-object-name">merge</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Merge properties of other into self</p></div>
+    </div>
+  <div class="mkapi-section raises">
+      <div class="mkapi-section-name raises">
+          <span class="mkapi-section-name-body raises">Raises</span> 
+        </div>
+      <div class="mkapi-section-body raises"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">ValueError</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If any of the properties are blank</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.__eq__">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableeq" class="mkapi-object-body method"><code class="mkapi-object-name">__eq__</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Mostly for unittesting.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply" class="mkapi-object-body method"><code class="mkapi-object-name">apply</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Called by the theme to apply the themeable</p><p>Subclasses shouldn't have to override this method to customize.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_figure" class="mkapi-object-body method"><code class="mkapi-object-name">apply_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>setup_figure</code>, this method is called
+after plotting and all the elements are drawn onto the
+figure.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.setup_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablesetup_figure" class="mkapi-object-body method"><code class="mkapi-object-name">setup_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>apply_figure</code>, this method is called
+before any plotting is done. This is necessary in some
+cases where the drawing functions need(or can make use of)
+this information.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.blank_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableblank_figure" class="mkapi-object-body method"><code class="mkapi-object-name">blank_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Blank out elements on the figure</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.axis_ticks_x.apply_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableaxis_ticks_xapply_ax" class="mkapi-object-body method"><code class="mkapi-object-name">apply_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_x.apply_ax" title="Source for plotnine_prism.themeable.axis_ticks_x.apply_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply themeable to the axis</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.axis_ticks_x.blank_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableaxis_ticks_xblank_ax" class="mkapi-object-body method"><code class="mkapi-object-name">blank_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_x.blank_ax" title="Source for plotnine_prism.themeable.axis_ticks_x.blank_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>When it's set blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="plotnine_prism.themeable.axis_ticks_y">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object class code top">
+    <div class="mkapi-object-kind class top">class</div>
+    <h3 id="plotnine_prismthemeableaxis_ticks_y" class="mkapi-object-body class top"><code class="mkapi-object-prefix"><a href="#plotnine_prism.themeable">plotnine_prism.themeable</a>.</code><code class="mkapi-object-name">axis_ticks_y</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme_element=None</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_y" title="Source for plotnine_prism.themeable.axis_ticks_y">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section bases">
+      <div class="mkapi-section-name bases">
+          <span class="mkapi-section-name-body bases">Bases</span> 
+        </div>
+      <div class="mkapi-section-body bases">
+<span class="mkapi-base">plotnine.themes.themeable.axis_ticks_major_y</span>
+
+<span class="mkapi-base">plotnine.themes.themeable.axis_ticks_minor_y</span>
+
+<span class="mkapi-base">plotnine.themes.themeable.themeable</span>
+</div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Themeable for ticks on y axis that is missing in plotnine</p></div>
+    </div>
+  <div class="mkapi-section attributes">
+      <div class="mkapi-section-name attributes">
+          <span class="mkapi-section-name-body attributes">Attributes</span> 
+        </div>
+      <div class="mkapi-section-body attributes"><ul class="mkapi-items">
+
+
+
+<li class="readonly-property"><code class="mkapi-item-name">rcParams</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return themeables rcparams to an rcparam dict before plotting.<span id="plotnine.themes.themeable.themeable.rcParams"></span><a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.rcParams" title="Source for plotnine.themes.themeable.themeable.rcParams">&lt;/&gt;</a></span></li>
+
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section methods">
+      <div class="mkapi-section-name methods">
+          <span class="mkapi-section-name-body methods">Methods</span> 
+        </div>
+      <div class="mkapi-section-body methods"><ul class="mkapi-items">
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.__eq__">__eq__</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Mostly for unittesting.<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply">apply</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Called by the theme to apply the themeable<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.axis_ticks_y.apply_ax">apply_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply themeable to the axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_y.apply_ax" title="Source for plotnine_prism.themeable.axis_ticks_y.apply_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply_figure">apply_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.axis_ticks_y.blank_ax">blank_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">When it's set blank<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_y.blank_ax" title="Source for plotnine_prism.themeable.axis_ticks_y.blank_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.blank_figure">blank_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Blank out elements on the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a></span></li>
+
+<li class="staticmethod"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.from_class_name">from_class_name</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(out : Themeable)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Create an themeable by name<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.is_blank">is_blank</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return True if theme_element is made of element_blank<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.merge">merge</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Merge properties of other into self<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.setup_figure">setup_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a></span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+  <div class="mkapi-members">
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.from_class_name">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object staticmethod code">
+    <div class="mkapi-object-kind staticmethod">staticmethod</div>
+    <h4 id="plotninethemesthemeablethemeablefrom_class_name_1" class="mkapi-object-body staticmethod"><code class="mkapi-object-name">from_class_name</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Create an themeable by name</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Class name</span></li>
+
+<li><code class="mkapi-item-name">theme_element</code>
+<span class="mkapi-item-type">(element object)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A of the type required by the themeFor lines, text and rects it should be one of:
+:class:<code>element_line</code>,
+:class:<code>element_rect</code>,
+:class:<code>element_text</code> or
+:class:<code>element_blank</code>
+</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.is_blank">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableis_blank_1" class="mkapi-object-body method"><code class="mkapi-object-name">is_blank</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Return True if theme_element is made of element_blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.merge">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablemerge_1" class="mkapi-object-body method"><code class="mkapi-object-name">merge</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Merge properties of other into self</p></div>
+    </div>
+  <div class="mkapi-section raises">
+      <div class="mkapi-section-name raises">
+          <span class="mkapi-section-name-body raises">Raises</span> 
+        </div>
+      <div class="mkapi-section-body raises"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">ValueError</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If any of the properties are blank</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.__eq__">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableeq_1" class="mkapi-object-body method"><code class="mkapi-object-name">__eq__</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Mostly for unittesting.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_1" class="mkapi-object-body method"><code class="mkapi-object-name">apply</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Called by the theme to apply the themeable</p><p>Subclasses shouldn't have to override this method to customize.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_figure_1" class="mkapi-object-body method"><code class="mkapi-object-name">apply_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>setup_figure</code>, this method is called
+after plotting and all the elements are drawn onto the
+figure.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.setup_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablesetup_figure_1" class="mkapi-object-body method"><code class="mkapi-object-name">setup_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>apply_figure</code>, this method is called
+before any plotting is done. This is necessary in some
+cases where the drawing functions need(or can make use of)
+this information.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.blank_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableblank_figure_1" class="mkapi-object-body method"><code class="mkapi-object-name">blank_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Blank out elements on the figure</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.axis_ticks_y.apply_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableaxis_ticks_yapply_ax" class="mkapi-object-body method"><code class="mkapi-object-name">apply_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_y.apply_ax" title="Source for plotnine_prism.themeable.axis_ticks_y.apply_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply themeable to the axis</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.axis_ticks_y.blank_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableaxis_ticks_yblank_ax" class="mkapi-object-body method"><code class="mkapi-object-name">blank_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.axis_ticks_y.blank_ax" title="Source for plotnine_prism.themeable.axis_ticks_y.blank_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>When it's set blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length_x">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object class code top">
+    <div class="mkapi-object-kind class top">class</div>
+    <h3 id="plotnine_prismthemeableprism_ticks_length_x" class="mkapi-object-body class top"><code class="mkapi-object-prefix"><a href="#plotnine_prism.themeable">plotnine_prism.themeable</a>.</code><code class="mkapi-object-name">prism_ticks_length_x</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme_element=None</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_x" title="Source for plotnine_prism.themeable.prism_ticks_length_x">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section bases">
+      <div class="mkapi-section-name bases">
+          <span class="mkapi-section-name-body bases">Bases</span> 
+        </div>
+      <div class="mkapi-section-body bases">
+<span class="mkapi-base">plotnine.themes.themeable.themeable</span>
+</div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Themeable for ticks length on x axis</p></div>
+    </div>
+  <div class="mkapi-section attributes">
+      <div class="mkapi-section-name attributes">
+          <span class="mkapi-section-name-body attributes">Attributes</span> 
+        </div>
+      <div class="mkapi-section-body attributes"><ul class="mkapi-items">
+
+
+
+<li class="readonly-property"><code class="mkapi-item-name">rcParams</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return themeables rcparams to an rcparam dict before plotting.<span id="plotnine.themes.themeable.themeable.rcParams"></span><a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.rcParams" title="Source for plotnine.themes.themeable.themeable.rcParams">&lt;/&gt;</a></span></li>
+
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section methods">
+      <div class="mkapi-section-name methods">
+          <span class="mkapi-section-name-body methods">Methods</span> 
+        </div>
+      <div class="mkapi-section-body methods"><ul class="mkapi-items">
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.__eq__">__eq__</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Mostly for unittesting.<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply">apply</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Called by the theme to apply the themeable<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length_x.apply_ax">apply_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply themeable to the axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_x.apply_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_x.apply_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply_figure">apply_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length_x.blank_ax">blank_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">When it's set blank<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_x.blank_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_x.blank_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.blank_figure">blank_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Blank out elements on the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a></span></li>
+
+<li class="staticmethod"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.from_class_name">from_class_name</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(out : Themeable)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Create an themeable by name<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.is_blank">is_blank</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return True if theme_element is made of element_blank<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.merge">merge</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Merge properties of other into self<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.setup_figure">setup_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a></span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+  <div class="mkapi-members">
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.from_class_name">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object staticmethod code">
+    <div class="mkapi-object-kind staticmethod">staticmethod</div>
+    <h4 id="plotninethemesthemeablethemeablefrom_class_name_2" class="mkapi-object-body staticmethod"><code class="mkapi-object-name">from_class_name</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Create an themeable by name</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Class name</span></li>
+
+<li><code class="mkapi-item-name">theme_element</code>
+<span class="mkapi-item-type">(element object)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A of the type required by the themeFor lines, text and rects it should be one of:
+:class:<code>element_line</code>,
+:class:<code>element_rect</code>,
+:class:<code>element_text</code> or
+:class:<code>element_blank</code>
+</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.is_blank">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableis_blank_2" class="mkapi-object-body method"><code class="mkapi-object-name">is_blank</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Return True if theme_element is made of element_blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.merge">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablemerge_2" class="mkapi-object-body method"><code class="mkapi-object-name">merge</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Merge properties of other into self</p></div>
+    </div>
+  <div class="mkapi-section raises">
+      <div class="mkapi-section-name raises">
+          <span class="mkapi-section-name-body raises">Raises</span> 
+        </div>
+      <div class="mkapi-section-body raises"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">ValueError</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If any of the properties are blank</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.__eq__">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableeq_2" class="mkapi-object-body method"><code class="mkapi-object-name">__eq__</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Mostly for unittesting.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_2" class="mkapi-object-body method"><code class="mkapi-object-name">apply</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Called by the theme to apply the themeable</p><p>Subclasses shouldn't have to override this method to customize.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_figure_2" class="mkapi-object-body method"><code class="mkapi-object-name">apply_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>setup_figure</code>, this method is called
+after plotting and all the elements are drawn onto the
+figure.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.setup_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablesetup_figure_2" class="mkapi-object-body method"><code class="mkapi-object-name">setup_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>apply_figure</code>, this method is called
+before any plotting is done. This is necessary in some
+cases where the drawing functions need(or can make use of)
+this information.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.blank_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableblank_figure_2" class="mkapi-object-body method"><code class="mkapi-object-name">blank_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Blank out elements on the figure</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length_x.apply_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableprism_ticks_length_xapply_ax" class="mkapi-object-body method"><code class="mkapi-object-name">apply_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_x.apply_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_x.apply_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply themeable to the axis</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length_x.blank_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableprism_ticks_length_xblank_ax" class="mkapi-object-body method"><code class="mkapi-object-name">blank_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_x.blank_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_x.blank_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>When it's set blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length_y">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object class code top">
+    <div class="mkapi-object-kind class top">class</div>
+    <h3 id="plotnine_prismthemeableprism_ticks_length_y" class="mkapi-object-body class top"><code class="mkapi-object-prefix"><a href="#plotnine_prism.themeable">plotnine_prism.themeable</a>.</code><code class="mkapi-object-name">prism_ticks_length_y</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme_element=None</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_y" title="Source for plotnine_prism.themeable.prism_ticks_length_y">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section bases">
+      <div class="mkapi-section-name bases">
+          <span class="mkapi-section-name-body bases">Bases</span> 
+        </div>
+      <div class="mkapi-section-body bases">
+<span class="mkapi-base">plotnine.themes.themeable.themeable</span>
+</div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Themeable for ticks length on y axis</p></div>
+    </div>
+  <div class="mkapi-section attributes">
+      <div class="mkapi-section-name attributes">
+          <span class="mkapi-section-name-body attributes">Attributes</span> 
+        </div>
+      <div class="mkapi-section-body attributes"><ul class="mkapi-items">
+
+
+
+<li class="readonly-property"><code class="mkapi-item-name">rcParams</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return themeables rcparams to an rcparam dict before plotting.<span id="plotnine.themes.themeable.themeable.rcParams"></span><a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.rcParams" title="Source for plotnine.themes.themeable.themeable.rcParams">&lt;/&gt;</a></span></li>
+
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section methods">
+      <div class="mkapi-section-name methods">
+          <span class="mkapi-section-name-body methods">Methods</span> 
+        </div>
+      <div class="mkapi-section-body methods"><ul class="mkapi-items">
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.__eq__">__eq__</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Mostly for unittesting.<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply">apply</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Called by the theme to apply the themeable<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length_y.apply_ax">apply_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply themeable to the axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_y.apply_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_y.apply_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply_figure">apply_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length_y.blank_ax">blank_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">When it's set blank<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_y.blank_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_y.blank_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.blank_figure">blank_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Blank out elements on the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a></span></li>
+
+<li class="staticmethod"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.from_class_name">from_class_name</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(out : Themeable)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Create an themeable by name<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.is_blank">is_blank</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return True if theme_element is made of element_blank<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.merge">merge</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Merge properties of other into self<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.setup_figure">setup_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a></span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+  <div class="mkapi-members">
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.from_class_name">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object staticmethod code">
+    <div class="mkapi-object-kind staticmethod">staticmethod</div>
+    <h4 id="plotninethemesthemeablethemeablefrom_class_name_3" class="mkapi-object-body staticmethod"><code class="mkapi-object-name">from_class_name</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Create an themeable by name</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Class name</span></li>
+
+<li><code class="mkapi-item-name">theme_element</code>
+<span class="mkapi-item-type">(element object)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A of the type required by the themeFor lines, text and rects it should be one of:
+:class:<code>element_line</code>,
+:class:<code>element_rect</code>,
+:class:<code>element_text</code> or
+:class:<code>element_blank</code>
+</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.is_blank">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableis_blank_3" class="mkapi-object-body method"><code class="mkapi-object-name">is_blank</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Return True if theme_element is made of element_blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.merge">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablemerge_3" class="mkapi-object-body method"><code class="mkapi-object-name">merge</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Merge properties of other into self</p></div>
+    </div>
+  <div class="mkapi-section raises">
+      <div class="mkapi-section-name raises">
+          <span class="mkapi-section-name-body raises">Raises</span> 
+        </div>
+      <div class="mkapi-section-body raises"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">ValueError</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If any of the properties are blank</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.__eq__">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableeq_3" class="mkapi-object-body method"><code class="mkapi-object-name">__eq__</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Mostly for unittesting.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_3" class="mkapi-object-body method"><code class="mkapi-object-name">apply</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Called by the theme to apply the themeable</p><p>Subclasses shouldn't have to override this method to customize.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_figure_3" class="mkapi-object-body method"><code class="mkapi-object-name">apply_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>setup_figure</code>, this method is called
+after plotting and all the elements are drawn onto the
+figure.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.setup_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablesetup_figure_3" class="mkapi-object-body method"><code class="mkapi-object-name">setup_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>apply_figure</code>, this method is called
+before any plotting is done. This is necessary in some
+cases where the drawing functions need(or can make use of)
+this information.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.blank_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableblank_figure_3" class="mkapi-object-body method"><code class="mkapi-object-name">blank_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Blank out elements on the figure</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length_y.apply_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableprism_ticks_length_yapply_ax" class="mkapi-object-body method"><code class="mkapi-object-name">apply_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_y.apply_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_y.apply_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply themeable to the axis</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length_y.blank_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableprism_ticks_length_yblank_ax" class="mkapi-object-body method"><code class="mkapi-object-name">blank_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length_y.blank_ax" title="Source for plotnine_prism.themeable.prism_ticks_length_y.blank_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>When it's set blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object class code top">
+    <div class="mkapi-object-kind class top">class</div>
+    <h3 id="plotnine_prismthemeableprism_ticks_length" class="mkapi-object-body class top"><code class="mkapi-object-prefix"><a href="#plotnine_prism.themeable">plotnine_prism.themeable</a>.</code><code class="mkapi-object-name">prism_ticks_length</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme_element=None</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length" title="Source for plotnine_prism.themeable.prism_ticks_length">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section bases">
+      <div class="mkapi-section-name bases">
+          <span class="mkapi-section-name-body bases">Bases</span> 
+        </div>
+      <div class="mkapi-section-body bases">
+<span class="mkapi-base"><a href="./#plotnine_prism.themeable.prism_ticks_length_x">plotnine_prism.themeable.prism_ticks_length_x</a></span>
+
+<span class="mkapi-base"><a href="./#plotnine_prism.themeable.prism_ticks_length_y">plotnine_prism.themeable.prism_ticks_length_y</a></span>
+
+<span class="mkapi-base">plotnine.themes.themeable.themeable</span>
+</div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Themeable for ticks length</p></div>
+    </div>
+  <div class="mkapi-section attributes">
+      <div class="mkapi-section-name attributes">
+          <span class="mkapi-section-name-body attributes">Attributes</span> 
+        </div>
+      <div class="mkapi-section-body attributes"><ul class="mkapi-items">
+
+
+
+<li class="readonly-property"><code class="mkapi-item-name">rcParams</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return themeables rcparams to an rcparam dict before plotting.<span id="plotnine.themes.themeable.themeable.rcParams"></span><a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.rcParams" title="Source for plotnine.themes.themeable.themeable.rcParams">&lt;/&gt;</a></span></li>
+
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section methods">
+      <div class="mkapi-section-name methods">
+          <span class="mkapi-section-name-body methods">Methods</span> 
+        </div>
+      <div class="mkapi-section-body methods"><ul class="mkapi-items">
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.__eq__">__eq__</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Mostly for unittesting.<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply">apply</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Called by the theme to apply the themeable<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length.apply_ax">apply_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply themeable to the axis<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length.apply_ax" title="Source for plotnine_prism.themeable.prism_ticks_length.apply_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.apply_figure">apply_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine_prism.themeable.prism_ticks_length.blank_ax">blank_ax</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">When it's set blank<a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length.blank_ax" title="Source for plotnine_prism.themeable.prism_ticks_length.blank_ax">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.blank_figure">blank_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Blank out elements on the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a></span></li>
+
+<li class="staticmethod"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.from_class_name">from_class_name</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(out : Themeable)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Create an themeable by name<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.is_blank">is_blank</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(bool)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Return True if theme_element is made of element_blank<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.merge">merge</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Merge properties of other into self<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a></span></li>
+
+<li class="method"><code class="mkapi-item-name"><a href="#plotnine.themes.themeable.themeable.setup_figure">setup_figure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Apply theme to the figure<a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a></span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+  <div class="mkapi-members">
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.from_class_name">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object staticmethod code">
+    <div class="mkapi-object-kind staticmethod">staticmethod</div>
+    <h4 id="plotninethemesthemeablethemeablefrom_class_name_4" class="mkapi-object-body staticmethod"><code class="mkapi-object-name">from_class_name</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">name</code>, <code class="mkapi-object-signature">theme_element</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.from_class_name" title="Source for plotnine.themes.themeable.themeable.from_class_name">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Create an themeable by name</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Class name</span></li>
+
+<li><code class="mkapi-item-name">theme_element</code>
+<span class="mkapi-item-type">(element object)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">A of the type required by the themeFor lines, text and rects it should be one of:
+:class:<code>element_line</code>,
+:class:<code>element_rect</code>,
+:class:<code>element_text</code> or
+:class:<code>element_blank</code>
+</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.is_blank">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableis_blank_4" class="mkapi-object-body method"><code class="mkapi-object-name">is_blank</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.is_blank" title="Source for plotnine.themes.themeable.themeable.is_blank">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Return True if theme_element is made of element_blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.merge">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablemerge_4" class="mkapi-object-body method"><code class="mkapi-object-name">merge</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.merge" title="Source for plotnine.themes.themeable.themeable.merge">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Merge properties of other into self</p></div>
+    </div>
+  <div class="mkapi-section raises">
+      <div class="mkapi-section-name raises">
+          <span class="mkapi-section-name-body raises">Raises</span> 
+        </div>
+      <div class="mkapi-section-body raises"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">ValueError</code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">If any of the properties are blank</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.__eq__">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableeq_4" class="mkapi-object-body method"><code class="mkapi-object-name">__eq__</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">other</code><code class="mkapi-object-parenthesis">)</code><span class="mkapi-item-type"> &#x2192; bool</span></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.__eq__" title="Source for plotnine.themes.themeable.themeable.__eq__">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Mostly for unittesting.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_4" class="mkapi-object-body method"><code class="mkapi-object-name">apply</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">theme</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply" title="Source for plotnine.themes.themeable.themeable.apply">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Called by the theme to apply the themeable</p><p>Subclasses shouldn't have to override this method to customize.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.apply_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableapply_figure_4" class="mkapi-object-body method"><code class="mkapi-object-name">apply_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.apply_figure" title="Source for plotnine.themes.themeable.themeable.apply_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>setup_figure</code>, this method is called
+after plotting and all the elements are drawn onto the
+figure.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.setup_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeablesetup_figure_4" class="mkapi-object-body method"><code class="mkapi-object-name">setup_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.setup_figure" title="Source for plotnine.themes.themeable.themeable.setup_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply theme to the figure</p><p>Compared to :meth:<code>apply_figure</code>, this method is called
+before any plotting is done. This is necessary in some
+cases where the drawing functions need(or can make use of)
+this information.</p>
+</div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine.themes.themeable.themeable.blank_figure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotninethemesthemeablethemeableblank_figure_4" class="mkapi-object-body method"><code class="mkapi-object-name">blank_figure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">figure</code>, <code class="mkapi-object-signature">targets</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine.themes.themeable/#plotnine.themes.themeable.themeable.blank_figure" title="Source for plotnine.themes.themeable.themeable.blank_figure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Blank out elements on the figure</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length.apply_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableprism_ticks_lengthapply_ax" class="mkapi-object-body method"><code class="mkapi-object-name">apply_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length.apply_ax" title="Source for plotnine_prism.themeable.prism_ticks_length.apply_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Apply themeable to the axis</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="plotnine_prism.themeable.prism_ticks_length.blank_ax">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object method code">
+    <div class="mkapi-object-kind method">method</div>
+    <h4 id="plotnine_prismthemeableprism_ticks_lengthblank_ax" class="mkapi-object-body method"><code class="mkapi-object-name">blank_ax</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">ax</code><code class="mkapi-object-parenthesis">)</code></h4>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/plotnine_prism.themeable/#plotnine_prism.themeable.prism_ticks_length.blank_ax" title="Source for plotnine_prism.themeable.prism_ticks_length.blank_ax">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>When it's set blank</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../js/mkapi.js"></script>
+      
+    
+  </body>
+</html>

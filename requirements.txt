@@ -1,0 +1,16 @@
+# use_directory_urls doesn't work for newer versions
+mkdocs
+jinja2
+mkdocs-material
+pymdown-extensions
+mkapi-fix
+mknotebooks
+Pygments
+ipykernel
+ipywidgets
+datar
+scipy
+# # to compile readme.ipynb
+# plotnine
+# klib
+# pardoc

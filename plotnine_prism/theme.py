@@ -123,7 +123,9 @@ class theme_prism(theme_abc):
         kwargs.setdefault("axis_title", element_text(
             colour=colours.axisTitleColor,
         ))
-        kwargs.setdefault("axis_title_x", element_text())
+        kwargs.setdefault("axis_title_x", element_text(
+            margin={"t": 1.2 * base_size},
+        ))
         kwargs.setdefault("axis_title_y", element_text(
             margin={"r": .5 * base_size},
             angle=90,

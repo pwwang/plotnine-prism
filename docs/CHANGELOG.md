@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.3.3
+
+- docs: fix two links in main README, and presumably resulting documentation
+- fix(#4): fix axis_title_x being overlapping with x ticks
+
 ## 0.3.2
 
 - chore: update Python version and dependencies in pyproject.toml
